@@ -1,0 +1,446 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins',sans-serif;
+   
+}
+
+
+html {
+    scroll-behavior: smooth !important;
+}
+
+
+.lead a:hover{
+
+color: #4e5f62 !important;
+}
+
+
+.isDisabled {
+    color: currentColor;
+    cursor: not-allowed;
+    opacity: 0.5;
+    text-decoration: none;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header{
+    background-image: url(https://freellustrustrations.s3.us-east-2.amazonaws.com/free-images/freeimg_77003976freejpg850.jpg);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+     background-attachment: fixed;
+    background-size: cover;
+    padding-bottom: 5%;
+}
+
+.navbar-nav a:hover{
+    color: white !important;
+}
+
+.nav-link{
+    margin-right: 1rem;
+}
+
+
+.navbar{
+    
+    font-size: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+
+
+
+
+
+.cv{
+    max-width: 10rem;
+    margin-top: 0.5rem;
+    font-weight: 500 !important;
+}
+
+.cv:hover{
+    background-color: #3adef7 !important;
+    color: white !important;
+    border: none !important;
+}
+
+#portfolio port {
+    height: 100vh;
+ 
+}
+
+#about{
+  min-height: 100vh;
+    background-color: #d6ecfb;
+    padding-bottom: 10%;
+}
+
+.ti{
+    padding-top: 3rem !important;
+   
+}
+
+
+
+ .me{
+     max-width: 400px;
+     max-height: 400px;
+     
+    
+    
+   
+ }
+
+
+.log2{
+    margin-top: -0.5rem !important;
+}
+
+
+.featurette{
+    text-align: justify;
+    margin-top: 5rem !important;
+}
+
+.abtitle{
+    padding-top: 3rem !important;
+}
+
+
+
+#Articles{
+   
+   
+   
+    min-height: 100vh;
+    display: grid;
+    place-items: center center;
+    font-family: 'Poppins',sans-serif;
+    margin-bottom: auto;
+}
+
+
+
+
+
+
+
+.link a{
+    font-size: 35px;
+}
+
+
+.link a:hover{
+    color: #030c43 !important;
+}
+
+
+
+
+
+.cards{
+    margin-top: 4rem;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit,minmax(200px,2fr)) !important;
+    padding: 20px !important;
+    grid-gap: 30px !important;
+  
+    
+}
+
+.cards a{
+    text-decoration: none;
+}
+
+.card{
+    max-width: 250px;
+    background-color:#030c43 !important;
+    border-radius: 20px !important;
+    box-shadow: 0 0 30px rgba(0,0,0,0.18) !important;
+    
+   
+}
+
+.containers{
+    position: relative !important;
+    clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%) !important;
+}
+img{
+    width: 100%;
+    display: block;
+    border-radius: 20px 20px 0 0;
+}
+.containers:after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px 20px 0 0;
+    opacity: 0.7;
+}
+
+
+.details{
+    padding: 20px 10px;
+}
+.details>h3{
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 10px 0 15px 0;
+}
+.details>p{
+    color: #a0a0a0;
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+
+.fo{
+    padding-top: 2rem;
+}
+
+
+
+
+
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .header{
+      /*  height: 60vh;*/
+       background-position: -400px 0px;
+    }
+
+    .cv{
+        margin-top: 0.5rem;
+    }
+    .title{
+        margin-top: 200px !important;
+        
+    }
+
+
+  
+.pics{
+    width: 300px;
+    margin-left: 5%;
+}
+
+#Articles{
+    min-height: 100vh;
+}
+
+.cards{
+    margin-left: 2rem;
+}
+
+
+
+.copy{
+    margin-top: 1rem;
+    font-size: 9px;
+}
+
+
+#about{
+    min-height: 100%;
+}
+
+
+
+.link a{
+    font-size: 20px;
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+   .header{
+       min-height: 100vh;
+}
+
+.title{
+    
+    margin-top: 15rem !important;
+
+}
+    
+   
+  
+.pics{
+    width: 300px;
+    margin-left: 22%;
+} 
+
+
+#about{
+    min-height: 100vh;
+}
+
+
+  
+}
+
+
+
+
+
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+
+    .link a{
+        font-size: 25px;
+    }
+    
+}
+
+   
+
+@media (min-width: 768px) and (max-width:992px) {
+    
+.featurette{
+    margin-top: 10rem !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.pic{
+    margin-left: 10rem !important;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+  
+.pics{
+    width:auto ;
+    margin-left:0;
+}
+
+
+
+
+#about{
+    min-height: 100vh;
+}
+
+}
+
+
+
+
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    
+   .featurette{
+       margin-top: 20rem !important;
+   }
+
+
+
+.cards{
+    margin-top: 10rem !important;
+}
+
+
+
+
+
+}
+    
+
+
+
+
+
+
+
+
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+    .title{
+    
+        margin-top: 18rem !important;
+    
+    }
+ 
+
+}
+
+
+
+
+
+@media only screen and (min-width: 1400px) {
+  
+   .featurette{
+       margin-top: 10rem !important;
+      
+   }
+    
+    }
