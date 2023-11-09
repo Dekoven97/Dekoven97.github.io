@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="timeline.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ==========Montserrat font download================================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ============================animate on scroll================================= -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script> -->
+
+    <title>De Koven</title>
+  </head>
+
+  <style>
+    :root {
+      --darkmode: #091120;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    body {
+      overflow-x: hidden !important;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      text-transform: none;
+      text-decoration: none;
+      list-style: none;
+      box-sizing: border-box;
+      font-size: 16px;
+      /* background: #000; */
+      font-family: "DM Sans", "Nunito Sans", "Montserrat", sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .transition {
+      transition: all ease-out 1s;
+    }
+
+    .border {
+      border: 1px dashed red;
+    }
+
+    .margin {
+      margin-inline-start: 3rem;
+      margin-inline-end: 3rem;
+    }
+
+    .goTop {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      margin-inline-end: 2rem;
+      margin-block-end: 2rem;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .goTop i {
+      color: #091120;
+    }
+
+    .de-navbar {
+      height: 7vh;
+      position: fixed;
+      left: 0;
+      width: 100%;
+      padding: 1.5rem 3rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .de-navbar.scrolled,
+    .menu-mobile.scrolled {
+      box-shadow: rgb(208, 221, 236) 0px 10px 10px -10px;
+      background: #fff;
+      z-index: 3;
+    }
+
+    .dark-mode .scrolled {
+      background: var(--darkmode);
+      z-index: 3;
+    }
+
+    .menu-mobile {
+      height: 7vh;
+      display: none;
+      padding: 1.5rem 2rem;
+    }
+
+    /* ------------code from chat gpt ---------------- */
+
+    .menu-container {
+      position: relative;
+    }
+
+    .menu-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 30px;
+      height: 20px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    #menu-toggle {
+      opacity: 0 !important;
+    }
+
+    .bar {
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      margin-bottom: 4px;
+      transition: transform 0.3s ease;
+    }
+
+    .menu {
+      position: fixed;
+      top: 0rem;
+      right: 0;
+      background-color: #fff;
+      width: 95%;
+      height: 100%;
+      padding: 60px 40px 20px;
+      box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu li {
+      margin-bottom: 20px;
+    }
+
+    .menu a {
+      color: var(--darkmode);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Add the 'active' class style for the bars when the menu is open */
+    .bar.active {
+      background-color: #3c3434;
+    }
+
+    /* Add the 'active' class style for the middle bar when the menu is open */
+    .bar.active:nth-child(2) {
+      transform: scale(0);
+    }
+
+    /* **************************************** */
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-logo a {
+      font-family: "Signika Negative", sans-serif;
+      font-size: 1.8rem;
+      color: #000031;
+      font-stretch: narrower;
+      font-weight: 600;
+    }
+
+    .nav-logo a:hover {
+      color: hsl(240, 100%, 20%);
+    }
+
+    .logo-icon {
+      height: 3rem;
+    }
+
+    .menu-area {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .de-menu {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .de-menu a {
+      color: #000031;
+      font-size: 1rem;
+    }
+
+    .de-menu a:hover {
+      color: #1e3a8a;
+    }
+
+    /* dark mode */
+
+    .dark-mode {
+      background-color: var(--darkmode);
+      color: white;
+    }
+
+    .dark-mode a {
+      color: #fff;
+    }
+    .dark-mode,
+    #sun {
+      color: var(--darkmode);
+      margin: 0 0 0 0.4rem;
+      font-size: 0.75rem;
+
+      position: relative;
+    }
+
+    .dark-mode,
+    #sun2 {
+      color: var(--darkmode);
+      margin: 0 0 0 0.4rem;
+      font-size: 0.75rem;
+
+      position: relative;
+    }
+
+    .switch,
+    .switch2 {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 24px;
+    }
+
+    .switch2 {
+      width: 45px;
+    }
+
+    .dark-mode .slider::before {
+      background-color: var(--darkmode);
+    }
+
+    .dark-mode .slider2::before {
+      background-color: var(--darkmode);
+    }
+
+    .switch input,
+    .switch2 input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider,
+    .slider2 {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      display: flex;
+      align-items: center;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .slider:before,
+    .slider2:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider,
+    input:checked + .slider2 {
+      background-color: #ccc;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(16.5px);
+    }
+
+    input:checked + .slider2:before {
+      transform: translateX(16.5px);
+    }
+
+    #sun {
+      position: relative;
+      margin: 0 0 0 1.4rem;
+      font-size: 0.75rem;
+    }
+
+    #sun2 {
+      position: relative;
+      margin: 0 0 0 1.7rem;
+      font-size: 0.75rem;
+    }
+
+    #moon,
+    #moon2 {
+      margin: 0 0 0 0.4rem;
+    }
+
+    /* ============================================ */
+    .main-hero {
+      /* border: 1px dashed red; */
+      min-height: 100vh;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .hero-area {
+      display: flex;
+      /* align-items: center; */
+      padding: 0;
+      top: 20rem;
+
+      /* position: relative; */
+      position: fixed; /*test for testing*/
+    }
+
+    .blurred {
+      filter: blur(10px); /* Initial blur amount, change this value if needed */
+    }
+
+    .hero-text-area {
+      /* border: 1px dashed red; */
+      width: 50%;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-family: "Montserrat", sans-serif;
+      /* text-transform: uppercase; */
+      font-weight: 900;
+      line-height: 4.5rem;
+      margin: 0 0 1.5rem;
+    }
+
+    .dark-mode .hero-area {
+      color: #fff;
+    }
+
+    .tracking-in-expand {
+      -webkit-animation: tracking-in-expand 1.5s
+        cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation: tracking-in-expand 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+        both;
+    }
+
+    /* ----------------------------------------------
+
+ */
+    @-webkit-keyframes tracking-in-expand {
+      0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+      }
+      40% {
+        opacity: 0.6;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes tracking-in-expand {
+      0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+      }
+      40% {
+        opacity: 0.6;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .hero-text {
+      /* font-style: italic; */
+      font-weight: 100;
+      font-size: 1.1rem;
+      margin: 0 0 3rem;
+    }
+
+    .hero-cta {
+      padding: 0.9rem 1.3rem;
+      background: var(--darkmode);
+      font-weight: 600;
+      color: #fff;
+      transition: all 1s;
+      border-radius: 0.3rem;
+    }
+
+    .dark-mode .hero-cta {
+      background: #407bff;
+    }
+
+    .hero-cta:hover {
+      background: hsl(219, 56%, 30%);
+    }
+
+    .hero-illus-area {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+    }
+
+    .illus {
+      max-height: 40rem;
+      height: auto;
+
+      margin: -9rem 0.3rem 0;
+    }
+
+    /* --------------------------------------------------------------ABOUT----------------------------------------- */
+
+    .main-about {
+      min-height: 100vh;
+      background: #eff5fd;
+      padding: 6rem 0 0;
+      z-index: 2;
+      position: relative;
+    }
+
+    .dark-mode .main-about {
+      color: #fff;
+      background: #080d19;
+    }
+
+    .about-title {
+      display: block;
+      font-size: 15rem;
+      font-weight: bold;
+      position: relative;
+      z-index: 2;
+    }
+
+    .about-data {
+      display: flex;
+      margin: 1rem;
+    }
+
+    .name {
+      font-size: 3.5rem;
+      font-weight: 400;
+      font-style: italic;
+      margin-block-end: 1rem;
+    }
+    .name-span {
+      background: #000;
+      color: #fff;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.2rem;
+      font-weight: 800;
+    }
+
+    .dark-mode .name-span {
+      color: #000;
+      background: #fff;
+    }
+    .about-text {
+      width: 60%;
+    }
+
+    .short-text {
+      width: 80%;
+      font-size: 1.1rem;
+      text-align: justify;
+      line-height: 2rem;
+    }
+
+    .short-text a {
+      color: #1e40af;
+    }
+
+    .short-text a:hover {
+      color: hsl(226, 71%, 70%);
+    }
+
+    .dark-mode .short-text a {
+      color: hsl(226, 71%, 58%);
+    }
+
+    .text-focus-in {
+      -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+        both;
+      animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    }
+
+    /* ----------------------------------------------
+/**
+* ----------------------------------------
+* animation text-focus-in
+* ----------------------------------------
+*/
+    @-webkit-keyframes text-focus-in {
+      0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+    @keyframes text-focus-in {
+      0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+      }
+    }
+
+    .link {
+      font-size: 0.5rem;
+    }
+
+    .moi {
+      position: relative;
+      height: 40rem;
+      border-radius: 5rem;
+      margin: -12rem 0 0 3rem;
+      z-index: 1;
+      opacity: 1;
+      transform: rotate(12deg);
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+
+    .slide-tl {
+      -webkit-animation: slide-tl 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation: slide-tl 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+
+    /* ----------------------------------------------
+
+ * ----------------------------------------
+ * animation slide-tl
+ * ----------------------------------------
+ */
+    @-webkit-keyframes slide-tl {
+      0% {
+        -webkit-transform: translateY(0) translateX(0);
+        transform: translateY(0) translateX(0);
+      }
+      100% {
+        -webkit-transform: translateY(-100px) translateX(-100px);
+        transform: translateY(-100px) translateX(-100px);
+      }
+    }
+    @keyframes slide-tl {
+      0% {
+        -webkit-transform: translateY(0) translateX(0);
+        transform: translateY(0) translateX(0);
+      }
+      100% {
+        -webkit-transform: translateY(-100px) translateX(-100px);
+        transform: translateY(-100px) translateX(-100px);
+      }
+    }
+
+    /* ------------------------------------------------------------- */
+
+    .main-experience {
+      min-height: 100vh;
+      background: #fff;
+      padding: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .dark-mode .main-experience {
+      color: #fff;
+      background: var(--darkmode);
+    }
+
+    /* -------------------------------------------------- */
+
+    .main-skills {
+      min-height: 50vh;
+      position: relative;
+      background: #eff5fd;
+      z-index: 2;
+    }
+
+    .dark-mode .main-skills {
+      color: #fff;
+      background: #080d19;
+    }
+
+    .skills {
+      height: 100%;
+      padding-block: 8rem;
+    }
+
+    .skills-title {
+      font-weight: 900;
+      font-size: 9rem;
+      margin-block-end: 2rem;
+    }
+
+    .skills-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding-inline: 3rem;
+    }
+
+    .skills-item i {
+      font-size: 2rem;
+      width: 100px;
+      height: 100px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* margin-inline-end: 1rem; */
+    }
+    .dark-mode .skills-item i {
+      color: #080d19;
+    }
+
+    .skills-item i:hover {
+      opacity: 0.5;
+      cursor: context-menu;
+    }
+
+    .main-project {
+      min-height: 100vh;
+      background: #fff;
+      position: relative;
+      z-index: 2;
+    }
+
+    .dark-mode .main-project {
+      color: #fff;
+      background: var(--darkmode);
+    }
+
+    .project {
+      padding-block: 50px;
+    }
+    .project-title {
+      font-size: 9rem;
+      padding-block-end: 6rem;
+      font-weight: 900;
+    }
+
+    .theProjects {
+      width: fit-content;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 3rem;
+    }
+
+    .dark-mode .project-card {
+      width: 28rem;
+      color: #080d19;
+
+      height: 30rem;
+      background: #f8fafc;
+      border-radius: 1.5rem;
+      box-shadow: rgba(255, 255, 255, 0.684) 0px 3px 8px;
+    }
+
+    .project-card {
+      width: 28rem;
+      color: #080d19;
+
+      height: 30rem;
+      background: #f8fafc;
+      border-radius: 1.5rem;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .card-image {
+      width: fit-content;
+      max-width: 100%;
+      border-radius: 1.5rem 1.5rem 0 0;
+    }
+
+    .space {
+      width: 8rem;
+    }
+
+    .project-about {
+      text-align: center;
+      height: 8rem;
+      padding-inline: 2rem;
+      padding-block-start: 2rem;
+      /* border:1px dashed red; */
+      font-size: 1.5rem;
+      font-weight: 200;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .project-cta-area {
+      display: flex;
+      justify-content: center;
+
+      width: 100%;
+    }
+
+    .project-cta {
+      background: #0f172a;
+      padding: 1.3rem;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: #fff;
+      border-radius: 2rem;
+    }
+
+    .main-contact {
+      min-height: 50vh;
+      z-index: 2;
+      position: relative;
+      background: #eff5fd;
+    }
+
+    .dark-mode .main-contact {
+      color: #fff;
+
+      background: #080d19;
+    }
+
+
+    .contact-title{
+      font-weight: 800;
+      font-size: 8rem;
+    }
+
+
+
+    .contact-cta-area{
+      display: flex;
+     padding-block-start: 5rem;
+      justify-content: center;
+      align-items: center;
+      gap: .8rem;
+     
+    }
+
+.contact-cta{
+   
+      width: 100px;
+      height: 100px;
+      background: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.dark-mode .contact-cta{
+  box-shadow: rgba(255, 255, 255, 0.118) 0px 19px 38px, rgba(97, 94, 94, 0.22) 0px 15px 12px;
+}
+
+.contact-cta i{
+  color: #080d19;
+  font-size: 2rem;
+}
+
+.copyright-area{
+  display: flex;
+  /* border: 1px dashed #fff; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  bottom: 0;
+  padding-block-end: .8rem;
+  width: 100%;
+  position: absolute;
+}
+
+#copyright{
+  font-weight: 100;
+  font-family: "Montserrat" , sans-serif;
+  font-size: .9rem;
+}
+    /* ===================Small screen and PC=================== */
+
+    @media (min-width: 1200px) and (max-width: 1400px) {
+      .hero-title {
+        font-size: 2.5rem;
+        /* text-transform: uppercase; */
+        font-weight: bolder;
+        line-height: 3rem;
+        margin: 0 0 1.5rem;
+      }
+    }
+
+    /* ********************************************************
+*********************************************************
+***********************************************************
+***********************************************************
+***********************************************************
+***********************************************************
+************************************************************* */
+
+    /* *************Tablet and mobile screen******************** */
+    @media only screen and (max-width: 1200px) {
+      .de-navbar {
+        display: none !important;
+      }
+
+      .menu-mobile {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 3;
+      }
+
+      .dark-mode .bar {
+        background-color: #fff;
+      }
+
+      .dark-mode .menu {
+        background-color: #122240;
+        color: #fff;
+        font-size: 16px;
+      }
+
+      .hero-area {
+        height: 91.5vh;
+        display: flex;
+        /* align-items: center; */
+        top: -7rem;
+        text-align: center;
+        flex-direction: column-reverse;
+      }
+
+      .hero-text-area,
+      .hero-illus-area {
+        /* border: 1px dashed red; */
+        width: 100%;
+      }
+
+      .illus {
+        height: 20rem;
+        margin: 0;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+        /* text-transform: uppercase; */
+        font-weight: bolder;
+        line-height: 3rem;
+        margin: 0 0 1.5rem;
+      }
+
+      /* --------------------------- */
+
+      .about-title {
+        font-size: 8rem;
+        font-weight: bold;
+      }
+
+      .about-data {
+        flex-direction: column;
+      }
+
+      .about-text {
+        width: 100%;
+      }
+      .name {
+        font-size: 2.5rem;
+      }
+
+      .short-text {
+        width: 100%;
+      }
+
+      .name-span {
+        font-size: 0.8rem;
+      }
+
+      .about-illus {
+        display: flex;
+        justify-content: center;
+        margin: 3rem 0;
+      }
+
+      .moi {
+        margin: 0;
+        height: 30rem;
+      }
+    }
+
+    @media screen and (max-width: 750px) {
+      .about-title {
+        font-size: 5rem;
+      }
+
+      .name {
+        font-size: 2rem;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .margin {
+        margin-inline-start: 0.5rem;
+        margin-inline-end: 0.5rem;
+      }
+
+      .hero-area {
+        top: 2rem;
+      }
+
+      .name-span {
+        font-size: 0.5rem;
+      }
+
+      .about-title {
+        font-size: 4rem;
+        font-weight: bold;
+      }
+
+      .moi {
+        margin: 0;
+        height: 25rem;
+      }
+    }
+  </style>
+
+  <body class="dark-mode">
+    <script>
+      AOS.init();
+    </script>
+
+    <div class="goTop">
+      <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+
+    <nav class="de-navbar">
+      <div class="nav-logo"><a href="#"> De Koven</a></div>
+      <div class="menu-area">
+        <ul class="de-menu">
+          <li class="de-menu-item"><a href="#home">Home</a></li>
+          <li class="de-menu-item"><a href="#about">About</a></li>
+          <li class="de-menu-item"><a href="#experiences">Experience</a></li>
+          <li class="de-menu-item"><a href="#skills">Skills</a></li>
+          <li class="de-menu-item"><a href="#project">Projects</a></li>
+          <li class="de-menu-item"><a href="">Contact</a></li>
+        </ul>
+        <!--   dark mode slider   -->
+        <label class="switch">
+          <input type="checkbox" id="darkModeToggle" />
+          <span class="slider">
+            <i id="sun" class="fas fa-sun"></i>
+            <i id="moon" class="fas fa-moon"></i>
+          </span>
+        </label>
+        <!-- *********************************** -->
+      </div>
+    </nav>
+
+    <!-- *********************Mobile Menu***************************** -->
+
+    <nav class="menu-mobile">
+      <div class="nav-logo"><a href="#"> De Koven</a></div>
+
+      <!-- add with chat gpt  -->
+      <div class="menu-container">
+        <input type="checkbox" id="menu-toggle" />
+        <label class="menu-button" for="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+        <nav class="menu">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+            <!-- Add more menu items here -->
+          </ul>
+
+          <!--   dark mode slider   -->
+          <label class="switch2">
+            <input type="checkbox" id="darkModeToggle2" />
+            <span class="slider2">
+              <i id="sun2" class="fas fa-sun"></i>
+              <i id="moon2" class="fas fa-moon"></i>
+            </span>
+          </label>
+          <!-- *********************************** -->
+        </nav>
+      </div>
+
+      <!-- ---------------------- -->
+    </nav>
+
+    <div id="home" class="main-hero">
+      <section class="hero-area margin transition">
+        <div class="hero-text-area">
+          <div class="hero-title tracking-in-expand">
+            Transforming Ideas <br />into Powerful Websites
+          </div>
+
+          <div class="hero-text">
+            As a developer, I'll bring your vision to life, crafting stunning
+            designs, user-friendly interfaces, and seamless functionality.
+            Whether you need an e-commerce site, a portfolio, or a blog, my
+            expertise has got you covered. Let's build your online presence
+            together and unlock the full potential of your business. Join the
+            digital revolution today and take your website to new heights!
+          </div>
+
+          <a href="#project" class="hero-cta">
+            Our Work &nbsp; <i class="fa-solid fa-rectangle-list"></i>
+          </a>
+        </div>
+        <div class="hero-illus-area">
+          <!-- <img  class="illus"   src="assets/images/Website_designer_amico.png" alt="illlus"> -->
+          <lottie-player
+            src="https://assets4.lottiefiles.com/packages/lf20_7tpssowPnw.json"
+            background="transparent"
+            speed="1"
+            class="illus"
+            loop
+            autoplay
+          ></lottie-player>
+        </div>
+      </section>
+    </div>
+
+    <div id="about" class="main-about">
+      <section class="about margin transition">
+        <div class="about-title">Who am I?</div>
+
+        <div class="about-data">
+          <div class="about-text">
+            <div data-aos="fade-up-right" class="name">
+              James De Koven&nbsp;<span class="name-span"
+                >Junior Developer,Business Manager</span
+              >
+            </div>
+            <div
+              data-aos-delay="300"
+              data-aos="fade-up-right"
+              class="short-text"
+            >
+              With a degree in Computer Science and a diploma in SME
+              Management,I'm a passionate and dedicated junior developer. With a
+              good foundation in HTML, CSS, and JavaScript, I strive to create
+              visually appealing and user-friendly websites. I am enthusiastic
+              about learning new technologies and keeping up with industry
+              trends. As a juniordeveloper, I am eager to contribute my skills
+              and collaborate with experienced professionals to create engaging
+              web experiences. I have a keen eye for design and pay attention to
+              details to ensure pixel-perfect implementations.Despite my few
+              years of experience, I have worked with renowned institutions such
+              as
+              <a href="https://tainosvisualarts.com/"
+                >Tainos Visual Arts
+                <i class="fa-solid fa-up-right-from-square link"></i
+              ></a>
+              as a web developer and
+              <a href="https://turbosystemsa.com/"
+                >Turbo System SA
+                <i class="fa-solid fa-up-right-from-square link"></i
+              ></a>
+              as a developer analyst
+            </div>
+          </div>
+          <div class="about-illus">
+            <img class="moi" src="assets/images/WOOD9858.jpg" alt="dekoven" />
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="experiences" class="main-experience">
+      <section class="experiences margin transition">
+        <section id="timeline">
+          <h1 data-aos="fade-down-right" class="timeline-title">
+            Who i worked with
+          </h1>
+          <p class="leader">
+            Some of the prestigious company that i worked with
+          </p>
+
+          <div class="demo-card-wrapper">
+            <div data-aos="fade-right" class="demo-card demo-card--step1">
+              <div class="head">
+                <div class="number-box">
+                  <span
+                    ><img
+                      class="brh_exp"
+                      src="https://www.brh.ht/wp-content/themes/brh/img/logo.png"
+                      alt="brh"
+                  /></span>
+                </div>
+                <h2>
+                  <span class="small">September 2022 - Currently</span>Banque de
+                  la Republique d'Haïti<span class="thin">Developer</span>
+                </h2>
+              </div>
+            </div>
+            <!-- -------------------------------------------- -->
+
+            <div data-aos="fade-left" class="demo-card demo-card--step2">
+              <div class="head">
+                <div class="number-box">
+                  <span
+                    ><img
+                      class="turbo_exp"
+                      src="https://turbosystemsa.com/wp-content/uploads/2022/01/cropped-cropped-log-e1641594487119.png"
+                      alt="turbo"
+                  /></span>
+                </div>
+                <h2>
+                  <span class="small">May 2022 - August 2022</span>Turbo System
+                  SA <span class="thin">Analyst Developer</span>
+                </h2>
+              </div>
+            </div>
+
+            <!-- --------------------------------- -->
+
+            <div data-aos="fade-right" class="demo-card demo-card--step3">
+              <div class="head">
+                <div class="number-box">
+                  <span
+                    ><img
+                      class="hustero_exp"
+                      src="https://drive.google.com/uc?id=168l-hwli4Zqx_d2Qb8_5V_cc-Sd7FFk8"
+                      alt="husteo"
+                  /></span>
+                </div>
+                <h2>
+                  <span class="small">April 2022 - Currently</span> Hustero
+                  Technology <span class="thin">IT Consultant </span>
+                </h2>
+              </div>
+              <!-- <div class="body">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+    <img src="http://placehold.it/1000x500" alt="Graphic">
+  </div> -->
+            </div>
+
+            <div data-aos="fade-left" class="demo-card demo-card--step4">
+              <div class="head">
+                <div class="number-box">
+                  <span
+                    ><img
+                      class="esih_exp"
+                      src="https://images.squarespace-cdn.com/content/v1/604f4f7bdad32a12b24382e6/ea68a3dd-8b45-4e43-a00e-c79a56213ef7/LOGO+FINALE+WEB+.png?format=1500w"
+                      alt="Esih"
+                  /></span>
+                </div>
+                <h2>
+                  <span class="small">November 2021 - April 2022</span> AR/VR |
+                  ESIH <span class="thin">Web Developer </span>
+                </h2>
+              </div>
+              <!-- <div class="body">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta reiciendis deserunt doloribus consequatur, laudantium odio dolorum laboriosam.</p>
+    <img src="http://placehold.it/1000x500" alt="Graphic">
+  </div> -->
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+
+    <div id="skills" class="main-skills">
+      <section class="skills margin transition">
+        <div class="skills-title">Skills</div>
+
+        <ul class="skills-item">
+          <li><i title="html" class="fa-brands fa-html5"></i></li>
+          <li><i title="css" class="fa-brands fa-css3"></i></li>
+          <li><i title="php" class="fa-brands fa-php"></i></li>
+          <li><i title="laravel" class="fa-brands fa-laravel"></i></li>
+          <li><i title="javaScript" class="fa-brands fa-square-js"></i></li>
+          <li><i title="angular" class="fa-brands fa-angular"></i></li>
+          <li><i title="java" class="fa-brands fa-java"></i></li>
+          <li>
+            <i title="wordpress" class="fa-brands fa-wordpress-simple"></i>
+          </li>
+          <li><i title="Windows" class="fa-brands fa-windows"></i></li>
+          <li><i title="linux" class="fa-brands fa-linux"></i></li>
+          <li><i title="docker" class="fa-brands fa-docker"></i></li>
+          <li><i title="github" class="fa-brands fa-github"></i></li>
+          <li>
+            <i
+              title="database - administration"
+              class="fa-solid fa-database"
+            ></i>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="main-project" id="project">
+      <section class="project margin transition">
+        <div class="project-title">Projects</div>
+
+        <div class="project-area">
+          <div class="theProjects" id="project-area">
+            <div class="project-card">
+              <img
+                src="assets/images/Screenshot 2023-11-08 at 11.05.41 AM.png"
+                alt=""
+                class="card-image"
+              />
+              <div class="project-about">Online Learning Plateforme</div>
+              <div class="project-cta-area">
+                <a href="" class="project-cta">Visit website</a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <img
+                src="assets/images/Screenshot 2023-11-08 at 11.06.43 AM.png"
+                alt=""
+                class="card-image"
+              />
+              <div class="project-about">Woodley Lozamma Website</div>
+              <div class="project-cta-area">
+                <a href="" target="_blank" class="project-cta">Visit website</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <img
+                src="assets/images/Screenshot 2023-11-08 at 12.08.10 PM.png"
+                alt=""
+                class="card-image"
+              />
+              <div class="project-about">Hustero Website</div>
+              <div class="project-cta-area">
+                <a href="" target="_blank" class="project-cta">Visit website</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <img
+                src="assets/images/Screenshot 2023-11-08 at 12.17.03 PM.png"
+                alt=""
+                class="card-image"
+              />
+              <div class="project-about">Fedler Gustave Website</div>
+              <div class="project-cta-area">
+                <a href="" target="_blank" class="project-cta">Visit website</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <img
+                src="assets/images/Screenshot 2023-11-08 at 12.33.14 PM.png"
+                alt=""
+                class="card-image"
+              />
+              <div class="project-about">Acareso Website</div>
+              <div class="project-cta-area">
+                <a href="" target="_blank" class="project-cta">Visit website</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <img
+                src="assets/images/Screenshot 2023-11-08 at 12.34.06 PM.png"
+                alt=""
+                class="card-image"
+              />
+              <div class="project-about">GD SA Website</div>
+              <div class="project-cta-area">
+                <a href="" target="_blank" class="project-cta">Visit website</a>
+              </div>
+            </div>
+            <div class="space"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="main-contact" id="contact">
+      <section class="contact margin transition"">
+        <div class="contact-title">Get in touch</div>
+
+
+            <div class="contact-cta-area">
+               
+                <a class="contact-cta" href=""><i class="fa-brands fa-facebook-f"></i></a>
+                <a class="contact-cta" href=""><i class="fa-brands fa-instagram"></i></a>
+                <a class="contact-cta" href="">
+
+                  <svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 0 512 512">
+                    <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+
+
+                </a>
+                <a class="contact-cta" href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                <a class="contact-cta" href=""><i class="fa-brands fa-github"></i></a>
+                <a class="contact-cta" href=""><i class="fa-regular fa-paper-plane"></i></a>
+        
+              
+            </div>
+
+               <div class="copyright-area">
+               <div id="copyright"></div>
+               <!-- <div>Powered by <a href="https:www.hustero.com">Hustero</a></div> -->
+               </div>
+
+      </section>
+    </div>
+
+    <!-- ******************************for dark mode button************************* -->
+    <script>
+      const toggleSwitch = document.getElementById("darkModeToggle");
+      const body = document.body;
+      const sun = document.getElementById("sun");
+      const moon = document.getElementById("moon");
+
+      moon.style.display = "none";
+
+      function switchTheme(e) {
+        if (e.target.checked) {
+          body.classList.remove("dark-mode");
+          sun.style.display = "none";
+          moon.style.display = "flex";
+        } else {
+          body.classList.add("dark-mode");
+          sun.style.display = "flex";
+          moon.style.display = "none";
+        }
+      }
+
+      toggleSwitch.addEventListener("change", switchTheme);
+    </script>
+
+    <!-- *********************** for mobile darkmode tag ***************************-->
+
+    <script>
+      const toggleSwitch2 = document.getElementById("darkModeToggle2");
+      const bodymobile = document.body;
+      const sun2 = document.getElementById("sun2");
+      const moon2 = document.getElementById("moon2");
+
+      moon2.style.display = "none";
+
+      function switchTheme2(f) {
+        if (f.target.checked) {
+          bodymobile.classList.remove("dark-mode");
+          sun2.style.display = "none";
+          moon2.style.display = "flex";
+        } else {
+          bodymobile.classList.add("dark-mode");
+          sun2.style.display = "flex";
+          moon2.style.display = "none";
+        }
+      }
+
+      toggleSwitch2.addEventListener("change", switchTheme2);
+    </script>
+
+    <!-- ***************************for hamburger menu************************** -->
+    <script>
+      // Get the necessary elements
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.querySelector(".menu");
+      const bars = document.querySelectorAll(".bar");
+
+      // Add event listener to toggle menu visibility and change bar appearance
+      menuToggle.addEventListener("change", () => {
+        if (menuToggle.checked) {
+          menu.style.transform = "translateX(0)";
+          // Change the bar appearance when the menu is open
+          bars.forEach((bar) => bar.classList.add("active"));
+        } else {
+          menu.style.transform = "translateX(100%)";
+          // Change the bar appearance when the menu is closed
+          bars.forEach((bar) => bar.classList.remove("active"));
+        }
+      });
+    </script>
+
+    <!-- *********************add dropshadow on scroll****************************-->
+    <script>
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".de-navbar");
+        if (window.scrollY > 0) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+    </script>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        const navbarMo = document.querySelector(".menu-mobile");
+        if (window.scrollY > 0) {
+          navbarMo.classList.add("scrolled");
+        } else {
+          navbarMo.classList.remove("scrolled");
+        }
+      });
+    </script>
+
+    <!-- **************************************************** -->
+
+    <!-- script to apply beffect on about title when it's on vh -->
+
+    <script>
+      function isElementInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <=
+            (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+
+      function handleScroll() {
+        const elements = document.querySelectorAll(".about-title");
+        elements.forEach((element) => {
+          if (isElementInViewport(element)) {
+            element.classList.add("text-focus-in");
+          } else {
+            element.classList.remove("text-focus-in");
+          }
+        });
+      }
+
+      // Listen for scroll events
+      window.addEventListener("scroll", handleScroll);
+    </script>
+
+    <!-- ------- adding blur effect when scroll on hero -------- -->
+
+    <script>
+      window.addEventListener("scroll", function () {
+        const navbarMo = document.querySelector(".hero-area");
+        if (window.scrollY > 0) {
+          navbarMo.classList.add("blurred");
+        } else {
+          navbarMo.classList.remove("blurred");
+        }
+      });
+    </script>
+
+    <!-- ==================================== gsap CDN script ==================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/MotionPathPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EaselPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/PixiPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+
+    <!-- ==================================== RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file ====================================  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/EasePack.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
+
+    <script>
+      let timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".main-about",
+          start: "top top", // can also use %
+          end: "+=1000px",
+          scrub: true, // set to false to untied element from mouse scroll , make animation fire only once
+          markers: false,
+          pin: true,
+          // toogleActions : "play reverse reverse complete"
+        },
+      });
+
+      timeline.from(".moi", {
+        y: 800,
+        x: 800,
+        opacity: 0,
+        border: "5px solid #FFF",
+      });
+
+      let heroIlus = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".hero-illus-area",
+          start: "-100px top",
+          markers: false,
+          toggleActions: "play none reverse reverse",
+        },
+      });
+
+      heroIlus.to(".hero-illus-area", {
+        x: 500,
+        opacity: 0,
+        rotation: 20,
+      });
+
+      gsap.to(".hero-title", {
+        scrollTrigger: {
+          trigger: ".main-hero",
+          start: "10% top",
+          markers: false,
+          scrub: 0.25,
+          toggleActions: "play play play reverse",
+        },
+
+        scale: 70,
+      });
+
+      gsap.from(".skills-title", {
+        scrollTrigger: {
+          trigger: ".main-experience",
+          start: "30% top",
+          end: "bottom center",
+
+          markers: false,
+          toggleActions: "play play reverse reverse",
+        },
+        x: "190%",
+        y: "-800",
+        opacity: 0,
+      });
+
+      let skills = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".main-experience",
+          markers: false,
+          start: "70% top",
+          toggleActions: "play play reverse reset",
+        },
+      });
+
+      skills.from(".skills-item i", {
+        x: "3000px",
+        stagger: 0.01,
+        rotation: 120,
+        duration: 0.5,
+        color: "#080d19",
+        borderRadius: 0,
+      });
+
+      // for hero title animation
+
+      let heroTitleReplace = gsap.timeline();
+
+      heroTitleReplace
+        .to(
+          ".hero-title",
+          {
+            text: "Crafting the Future of the Web",
+            ease: "none",
+          },
+          5
+        )
+        .to(
+          ".hero-title",
+          {
+            text: "Your Vision, Our Design",
+            ease: "none",
+          },
+          "+=5"
+        );
+
+      //make animation always on
+      heroTitleReplace.repeat(-1);
+      heroTitleReplace.repeatDelay(10);
+
+      // for top button animation
+      let button = document.querySelector(".goTop");
+
+      button.addEventListener("click", (e) => {
+        gT.restart();
+      });
+
+      let gT = gsap.timeline();
+
+      gT.to(".goTop", {
+        rotation: 360,
+      });
+
+      // for project title animation
+
+      const projectTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".skills",
+          start: "center top",
+          markers: false,
+          scrub: true,
+        },
+      });
+
+      projectTimeline.from(".project-title", {
+        opacity: 0,
+        ease: "slow",
+      });
+
+      const projectArea = document.getElementById("project-area");
+      let projectAreaWidth = projectArea.offsetWidth;
+      let amountToScroll = projectAreaWidth - window.innerWidth;
+
+      const tween = gsap.to(projectArea, {
+        x: -amountToScroll,
+        duration: 1,
+        ease: "none",
+      });
+
+      ScrollTrigger.create({
+        trigger: ".project-area",
+        start: "top 20%",
+        end: "+=" + amountToScroll,
+        pin: true,
+        animation: tween,
+        scrub: 1,
+        markers: false,
+      });
+
+
+ 
+        // for contact button 
+
+      const contactButton  = gsap.timeline({
+        scrollTrigger : {
+          trigger : ".contact-title" , 
+          start : "top 70%" ,
+          markers : true ,
+          toggleActions : "play play reverse reverse",
+          end : "top 50%"
+
+        }
+      });
+
+
+      contactButton.from(".contact-cta" , {
+            scale : 1 ,
+            y : 85 ,
+            stagger : .2
+      })
+     
+
+
+
+
+
+let currentYear = new Date();
+let date = currentYear.getFullYear();
+
+
+document.getElementById("copyright").innerHTML =  "De Koven , All rights reserved &copy; " + date;
+
+
+    </script>
+  </body>
+</html>
