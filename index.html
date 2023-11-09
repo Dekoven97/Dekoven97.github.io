@@ -771,13 +771,18 @@
     }
 
     .project-cta {
-      background: #0f172a;
+      background: hsl(222, 47%, 11%);
       padding: 1.3rem;
       font-size: 1.3rem;
       font-weight: 900;
       color: #fff;
       border-radius: 2rem;
     }
+
+
+.project-cta:hover{
+  background: hsl(222, 47%, 28%); ;
+}
 
     .main-contact {
       min-height: 50vh;
@@ -811,8 +816,8 @@
 
 .contact-cta{
    
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
       background: #fff;
       border-radius: 50%;
       display: flex;
@@ -820,6 +825,8 @@
       align-items: center;
       box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
+
+
 
 .dark-mode .contact-cta{
   box-shadow: rgba(255, 255, 255, 0.118) 0px 19px 38px, rgba(97, 94, 94, 0.22) 0px 15px 12px;
@@ -1286,7 +1293,7 @@
               />
               <div class="project-about">Online Learning Plateforme</div>
               <div class="project-cta-area">
-                <a href="" class="project-cta">Visit website</a>
+                <a href="https://learning.hustero.com/"   target="_blank" rel="noopener noreferrer" class="project-cta">Visit website</a>
               </div>
             </div>
 
@@ -1298,7 +1305,7 @@
               />
               <div class="project-about">Woodley Lozamma Website</div>
               <div class="project-cta-area">
-                <a href="" target="_blank" class="project-cta">Visit website</a>
+                <a href="https://hustero.com/lozamma/" target="_blank" rel="noopener noreferrer" class="project-cta">Visit website</a>
               </div>
             </div>
             <div class="project-card">
@@ -1309,7 +1316,7 @@
               />
               <div class="project-about">Hustero Website</div>
               <div class="project-cta-area">
-                <a href="" target="_blank" class="project-cta">Visit website</a>
+                <a href="https://www.hustero.com"  target="_blank" rel="noopener noreferrer" class="project-cta">Visit website</a>
               </div>
             </div>
             <div class="project-card">
@@ -1320,7 +1327,7 @@
               />
               <div class="project-about">Fedler Gustave Website</div>
               <div class="project-cta-area">
-                <a href="" target="_blank" class="project-cta">Visit website</a>
+                <a href="https://gustavefedler.me/" target="_blank" rel="noopener noreferrer" class="project-cta">Visit website</a>
               </div>
             </div>
             <div class="project-card">
@@ -1331,7 +1338,7 @@
               />
               <div class="project-about">Acareso Website</div>
               <div class="project-cta-area">
-                <a href="" target="_blank" class="project-cta">Visit website</a>
+                <a href="https://acareso.org/" target="_blank" rel="noopener noreferrer" class="project-cta">Visit website</a>
               </div>
             </div>
             <div class="project-card">
@@ -1342,7 +1349,7 @@
               />
               <div class="project-about">GD SA Website</div>
               <div class="project-cta-area">
-                <a href="" target="_blank" class="project-cta">Visit website</a>
+                <a href="https://thegraalgroup.com/" target="_blank" rel="noopener noreferrer" class="project-cta">Visit website</a>
               </div>
             </div>
             <div class="space"></div>
@@ -1358,9 +1365,9 @@
 
             <div class="contact-cta-area">
                
-                <a class="contact-cta" href=""><i class="fa-brands fa-facebook-f"></i></a>
-                <a class="contact-cta" href=""><i class="fa-brands fa-instagram"></i></a>
-                <a class="contact-cta" href="">
+                <a class="contact-cta" target="_blank" rel="noopener noreferrer" href="https://facebook.com/pierre.jamesdekoven/"><i class="fa-brands fa-facebook-f"></i></a>
+                <a class="contact-cta" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/de_koven/"><i class="fa-brands fa-instagram"></i></a>
+                <a class="contact-cta" target="_blank" rel="noopener noreferrer" href="https://twitter.com/DeKoven97">
 
                   <svg xmlns="http://www.w3.org/2000/svg" height="2rem" viewBox="0 0 512 512">
                     <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -1368,9 +1375,9 @@
 
 
                 </a>
-                <a class="contact-cta" href=""><i class="fa-brands fa-linkedin-in"></i></a>
-                <a class="contact-cta" href=""><i class="fa-brands fa-github"></i></a>
-                <a class="contact-cta" href=""><i class="fa-regular fa-paper-plane"></i></a>
+                <a class="contact-cta" target="_blank" rel="noopener noreferrer" href="linkedin.com/in/james-de-koven-pierre-a515b1191"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a class="contact-cta" target="_blank" rel="noopener noreferrer" href="https://github.com/Dekoven97"><i class="fa-brands fa-github"></i></a>
+                <a class="contact-cta" target="_blank" rel="noopener noreferrer" href="mailto:jamesdekoven43@gmail.com"><i class="fa-regular fa-paper-plane"></i></a>
         
               
             </div>
@@ -1701,7 +1708,7 @@
         scrollTrigger : {
           trigger : ".contact-title" , 
           start : "top 70%" ,
-          markers : true ,
+          markers : false ,
           toggleActions : "play play reverse reverse",
           end : "top 50%"
 
