@@ -55,8 +55,11 @@
 
     body {
       overflow-x: hidden !important;
+      margin: 0;
     }
 
+
+    
     * {
       margin: 0;
       padding: 0;
@@ -1576,7 +1579,7 @@
       });
 
       heroIlus.to(".hero-illus-area", {
-        x: 500,
+        x: 300,
         opacity: 0,
         rotation: 20,
       });
@@ -1590,7 +1593,7 @@
           toggleActions: "play play play reverse",
         },
 
-        scale: 70,
+        scale: 40,
       });
 
       gsap.from(".skills-title", {
@@ -1731,7 +1734,7 @@ let currentYear = new Date();
 let date = currentYear.getFullYear();
 
 
-document.getElementById("copyright").innerHTML =  "De Koven , All rights reserved &copy; " + date;
+document.getElementById("copyright").innerHTML =  "De Koven , All rights reserved &copy; " + date
 
 
     </script>
