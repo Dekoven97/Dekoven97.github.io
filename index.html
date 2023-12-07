@@ -903,7 +903,7 @@ border: 1px solid var(--darkmodeSecondary);
       }
 
 
-      .menu {
+      /* .menu {
         position: fixed;
         top: 0rem;
         right: 0;
@@ -915,7 +915,23 @@ border: 1px solid var(--darkmodeSecondary);
         transform: translateX(100%);
         transition: transform 0.3s ease;
         z-index: 3;
-      }
+      } */
+
+
+
+
+.menu{
+
+right: 0; 
+ background: var(--darkmodeSecondary);
+  width: 90%;
+  position: absolute;
+  transform: translateX(100%);
+  height: 100vh;
+  z-index: 999;
+  display: none;
+}
+
 
       .menu ul {
         list-style: none;
@@ -1056,9 +1072,6 @@ border: 1px solid var(--darkmodeSecondary);
 
 
 
-      .hero-section{
-        border: 1px dashed red;
-      }
 
 .illus{
   height: 50rem;
@@ -1092,23 +1105,42 @@ border: 1px solid var(--darkmodeSecondary);
         width: 50%;
 
       }
+      .ab-illus{
+        margin: 23rem 0 0 -19.9rem;
+        height: 20rem;
+      }
 
       .illus {
-        height: 15rem;
+        height: 10rem;
       }
 
       /* ========================== */
-      .about-title {
-        font-size: 4.5rem;
+      .about-title,
+      .skills-title ,
+      .project-title ,
+      .footer-title{
+        font-size: 3.5rem;
       }
 
       .about-name {
-        font-size: 2rem;
+        font-size: 1rem;
       }
 
       .grade {
         font-size: .5rem;
       }
+
+
+      /* ========================= */
+
+
+    #timeline h1 {
+      text-align: center;
+      font-size: 3rem;
+      
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
 
     }
   </style>
@@ -1138,6 +1170,19 @@ border: 1px solid var(--darkmodeSecondary);
 
   </header>
 
+
+
+
+
+
+
+
+
+
+
+
+
+  
   <!-- *********************Mobile Menu***************************** -->
 
   <div class="menu-mobile padding-inline">
@@ -1152,7 +1197,13 @@ border: 1px solid var(--darkmodeSecondary);
         <span class="bar"></span>
       </label>
 
-      <nav class="menu">
+
+
+<nav class="menu">
+
+</nav>
+
+      <!-- <nav class="menu">
         <ul>
           <li><a href="#hero-section">Home</a></li>
           <li><a href="#about-section">About</a></li>
@@ -1160,10 +1211,10 @@ border: 1px solid var(--darkmodeSecondary);
           <li><a href="#skills-section">Skills</a></li>
           <li><a href="#project-section">Projects</a></li>
           <li><a href="#footer-section">Contact</a></li>
-          <!-- Add more menu items here -->
+          <!-- Add more menu items here --
         </ul>
 
-        <!--  * dark mode slider   -->
+        <!--  * dark mode slider   --
         <label class="switch2">
           <input type="checkbox" id="darkModeToggle2" />
           <span class="slider2">
@@ -1171,8 +1222,8 @@ border: 1px solid var(--darkmodeSecondary);
             <i id="moon2" class="fas fa-moon"></i>
           </span>
         </label>
-        <!-- ======================================== -->
-      </nav>
+        <!-- ======================================== --
+      </nav> -->
     </div>
   </div>
 
@@ -1193,7 +1244,7 @@ border: 1px solid var(--darkmodeSecondary);
         and take your website to new heights!
       </div>
       <div class="hero-cta-area">
-        <a href="" class="hero-cta">Our Work <i class="fa-solid fa-database"></i>
+        <a href="#project-section" class="hero-cta">Our Work <i class="fa-solid fa-database"></i>
         </a>
       </div>
     </div>
